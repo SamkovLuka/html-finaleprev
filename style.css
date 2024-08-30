@@ -1,0 +1,242 @@
+@keyframes posted {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(236, 232, 232);
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.profile-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-direction: row-reverse;
+}
+
+.pfp {
+    margin-left: 20px; 
+}
+
+.pfp img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    max-width: calc(100% - 120px);
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-stats, .profile-description, .user-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit-profile-button, .message-button, .follow-button, .event-button, .post-button {
+    font-size: medium;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profile-button, .event-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+.edit-profile-button:hover, .event-button:hover {
+    background-color: #0056b3;
+}
+
+.follow-button {
+    background-color: #28a745;
+}
+
+.follow-button:hover {
+    background-color: #218838;
+}
+
+.user-info h2, .recent-activity h2, .recommendations h2, .current-events h2, .new-post h2 {
+    margin-bottom: 10px;
+}
+
+.recent-activity, .recommendations, .current-events, .new-post {
+    margin-top: 20px;
+}
+
+.activity-item, .recommendation {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.recommendation img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.current-events .event-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+}
+
+.new-post textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    resize: none;
+    height: 100px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.post-button {
+    font-weight: 700;
+    font-size: large;
+    background-color: #4CAF50;
+    color: white;
+    margin: 0 auto;
+    display: block;
+}
+
+.post-button:hover {
+    background-color: #45a049;
+}
+
+.post {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d2cece;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-button:hover + .post {
+    opacity: 1;
+    transform: translateY(0);
+    animation: posted 0.5s forwards;
+}
+
+.post-text {
+    margin-top: 50px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.post-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-pfp img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-time {
+    font-size: 14px;
+    color: gray;
+}
+
+.modal-overlay, .modal-content {
+    display: none;
+}
+
+.modal-content {
+    display: block;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: black;
+}
+
+.modal-post {
+    display: flex;
+    align-items: center;
+}
+
+.modal-pfp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.modal-post-time {
+    font-size: 14px;
+    color: gray;
+}
+
+.modal-post-text {
+    font-size: 16px;
+    color: #333;
+}
